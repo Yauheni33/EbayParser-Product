@@ -11,7 +11,7 @@ header = {
 }
 
 head = dict(header)
-url = 'https://www.ebay.com/sch/i.html?_from=R40&_sacat=0&_nkw=door+stopper&LH_BIN=1&_fsrp=1&LH_PrefLoc=3&_ipg=200'
+url = ''
 api = "http://open.api.ebay.com/shopping?callname=GetSingleItem&responseencoding=JSON&appid=Benjamin-TrendWat-PRD-f2466ad44-bc17cfa6&siteid=0&version=981&IncludeSelector=Compatibility,Description,Details,ItemSpecifics,TextDescription,HighBidder.FeedbackPrivate,HighBidder.FeedbackScore&ItemID="
 
 page = requests.get(url, headers=head)
