@@ -75,38 +75,6 @@ for page in range(4):
             ID = newPage.find("h2", {"itemprop": "gtin13"}).text
         except Exception as Error:
             print("Нет ID")
-        '''
-        name = newPage.find("h1", {"class": "it-ttl"}).text
-        brand = ""
-        try:
-            brand = newPage.find("h2", {"itemprop": "brand"}).find("span").text
-        except:
-            print("Нет бренда")
-        mpn = ""
-        try:
-            mpn = newPage.find("h2", {"itemprop": "mpn"}).text
-        except:
-            print("Нет MPN")
-        fullDescription = ""
-        try:
-            descriptionPage = BeautifulSoup((requests.get(newPage.find("iframe", {"sandbox": "allow-scripts allow-popups allow-popups-to-escape-sandbox allow-same-origin"})['src'])).text, "html.parser")
-        except:
-            descriptionPage = BeautifulSoup((requests.get(newPage.find("a", {
-                "class": "btn btn-ter u-padT10 "})['href'])).text,
-                                            "html.parser")
-        for description in descriptionPage.findAll(attrs={"id": "description"}):
-            fullDescription += description.text
-        print(feedProduct)
-        print(brand)
-        print(name)
-        print(manufacturer)
-        print(mpn)
-        print(itemType)
-        print(price)
-        print(image)
-        print(ID)
-        print(fullDescription)
-        '''
         worksheet.write('A' + str(row), feedProduct)
         worksheet.write('B' + str(row), (row - 3))
         worksheet.write('C' + str(row), brand[0])
